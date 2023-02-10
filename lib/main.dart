@@ -12,6 +12,7 @@ import 'package:lokota/models/user_post.dart';
 import 'package:lokota/models/weather_model.dart';
 import 'package:lokota/pages/exchange_rate.dart';
 import 'package:lokota/pages/jsonpalceholder.dart';
+import 'package:lokota/pages/random_user.dart';
 import 'package:lokota/pages/trending_movies.dart';
 
 import 'models/album_model.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const ExchangeRateUI(),
+      home: const RandomUser()
+      // ExchangeRateUI(),
       // TrendingMovieScreen()
       // JsonPlaceholder()
 
