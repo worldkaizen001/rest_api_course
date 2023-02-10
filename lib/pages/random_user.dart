@@ -17,9 +17,15 @@ class RandomUser extends StatefulWidget {
 
 class _RandomUserState extends State<RandomUser> {
 
+
+
   Future<RandomUserModel> getRandomUser () async {
-    String endpoint = 'https://random-data-api.com/api/v2/users';
-    var uri = Uri.parse(endpoint);
+    var users = '/users';
+    BaseClient baseClient = BaseClient();
+EndPoints endPoints = EndPoints();
+    // String endpoint = 'https://random-data-api.com/api/v2/users';
+    String endpointu = '${baseClient.baseUrl}${endPoints.users}';
+    var uri = Uri.parse(endpointu);
 
     var response = await http.get(uri);
    if(response.statusCode == 200) {
@@ -70,4 +76,14 @@ class _RandomUserState extends State<RandomUser> {
       ),
     );
   }
+}
+
+class BaseClient{
+
+  var baseUrl = 'https://random-data-api.com/api/v2/';
+
+}
+
+class EndPoints {
+  var users = '/users';
 }
